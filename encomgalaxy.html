@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>encomgalaxy</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Custom Google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            /* Page-specific styles: gallery layout, overlay popup, and section separation */
+            .section-header {
+                margin-bottom: 0.75rem;
+            }
+            .section-subtle {
+                color: #6c757d;
+            }
+            .gallery-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 16px;
+            }
+            .gallery-grid img {
+                width: 100%;
+                height: 220px;
+                object-fit: cover;
+                border-radius: 12px;
+                background: #f8f9fa;
+                box-shadow: 0 1px 8px rgba(0,0,0,.08);
+                transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+                cursor: zoom-in;
+                display: block;
+            }
+            .gallery-grid img:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 24px rgba(0,0,0,.12);
+                filter: saturate(1.05);
+            }
+            .image-popup-overlay {
+                position: fixed;
+                inset: 0;
+                background: rgba(0,0,0,0.6);
+                display: none;
+                align-items: center;
+                justify-content: center;
+                z-index: 1055;
+                padding: 24px;
+                cursor: zoom-out;
+            }
+            .image-popup-overlay.open {
+                display: flex;
+            }
+            .image-popup-content {
+                position: relative;
+                max-width: min(90vw, 1200px);
+                max-height: 90vh;
+            }
+            .image-popup-content img {
+                display: block;
+                max-width: 100%;
+                max-height: 90vh;
+                width: auto;
+                height: auto;
+                border-radius: 12px;
+                box-shadow: 0 12px 40px rgba(0,0,0,.35);
+                background: #fff;
+            }
+            .image-popup-close {
+                position: absolute;
+                top: -12px;
+                right: -12px;
+                background: #ffffff;
+                border-radius: 999px;
+                width: 36px;
+                height: 36px;
+                display: grid;
+                place-items: center;
+                box-shadow: 0 4px 16px rgba(0,0,0,.25);
+                cursor: pointer;
+                border: none;
+                font-size: 24px;
+                line-height: 1;
+            }
+    .contentCard {
+  background: linear-gradient(#fff, #fff) padding-box,
+              linear-gradient(135deg, #e3f2ff, #f5faff) border-box;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  max-height: clamp(260px, 45vh, 520px);     /* ارتفاع مريح لقراءة النص */
+  overflow: auto;        /* سكرول عند الحاجة */
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  scrollbar-width: thin;                      /* للفايرفوكس */
+  scrollbar-color: #7cb8ff #eef2f7;          /* ألوان للفايرفوكس */
+}
+
+    .contentCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* Scroll عصري للكروم وإيدج */
+.contentCard::-webkit-scrollbar {
+  width: 8px;
+}
+.contentCard::-webkit-scrollbar-track {
+  background: #eef2f7;
+  border-radius: 999px;
+}
+.contentCard::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b82f6, #60a5fa);
+  border-radius: 999px;
+}
+.contentCard::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #2563eb, #3b82f6);
+}
+
+.contentCard p,
+.contentCard li,
+.contentCard div,
+.contentCard span {
+  font-family: "Plus Jakarta Sans", "Cairo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #1f2937;
+}
+
+.contentCard p {
+  font-size: clamp(0.98rem, 0.94rem + 0.2vw, 1.08rem);
+  line-height: 1.9;
+  letter-spacing: 0.01em;
+  margin: 0;
+  white-space: pre-line;
+  text-wrap: pretty;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Structured content helpers */
+.contentCard .card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: .5rem;
+}
+.contentCard .title {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+.contentCard .meta {
+  font-size: .85rem;
+  color: #6b7280;
+  margin-bottom: .75rem;
+}
+.contentCard .badges { display:flex; flex-wrap: wrap; gap: .4rem; }
+.badge-soft {
+  display: inline-block;
+  padding: .25rem .55rem;
+  border-radius: 999px;
+  font-size: .75rem;
+  font-weight: 600;
+  border: 1px solid rgba(0,0,0,.06);
+  background: #f1f5f9;
+  color: #0f172a;
+}
+.badge-soft.badge-primary { background:#e8f1ff; color:#1d4ed8; border-color:#cfe2ff; }
+.badge-soft.badge-info { background:#e6fbff; color:#0284c7; border-color:#c7f6ff; }
+
+.contentCard .divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+  margin: .75rem 0;
+}
+.contentCard .subtitle {
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: .5rem;
+  font-size: 1rem;
+}
+.contentCard .feature-list { list-style: none; padding: 0; margin: 0 0 .25rem 0; display: grid; gap: .35rem; }
+.contentCard .feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: .5rem;
+  background: #f8fafc;
+  padding: .4rem .55rem;
+  border-radius: 10px;
+}
+.contentCard .feature-list li .icon { color:#2563eb; line-height: 1.2; margin-top: .1rem; flex: 0 0 auto; }
+.contentCard .note { margin-top: .25rem; color:#334155; background:#f1f5f9; border-radius: 8px; padding:.5rem .6rem; }
+
+            @media (max-width: 576px) {
+                .gallery-grid img { height: 160px; }
+            }
+        </style>
+    </head>
+<body>
+          <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary"> Lubna Rashid</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+       
+
+            <section id="gallery" class="py-5">
+                <div class="container px-5">
+                    <h2 class="h4 fw-bold mb-4">Gallery</h2>
+                    <div class="gallery-grid">
+   <img src="./assets/encomgalaxy/1.jpeg" alt="">
+<img src="./assets/encomgalaxy/3.jpeg" alt="">
+<img src="./assets/encomgalaxy/4.jpeg" alt="">
+<img src="./assets/encomgalaxy/5.jpeg" alt="">
+<img src="./assets/encomgalaxy/6.jpeg" alt="">
+<img src="./assets/encomgalaxy/7.jpeg" alt="">
+<img src="./assets/encomgalaxy/8.jpeg" alt="">
+<img src="./assets/encomgalaxy/9.jpeg" alt="">
+<img src="./assets/encomgalaxy/10.jpeg" alt="">
+<img src="./assets/encomgalaxy/11.jpeg" alt="">
+<img src="./assets/encomgalaxy/12.jpeg" alt="">
+<img src="./assets/encomgalaxy/13.jpeg" alt="">
+<img src="./assets/encomgalaxy/14.jpeg" alt="">
+<img src="./assets/encomgalaxy/15.jpeg" alt="">
+<img src="./assets/encomgalaxy/16.jpeg" alt="">
+<img src="./assets/encomgalaxy/17.jpeg" alt="">
+<img src="./assets/encomgalaxy/18.jpeg" alt="">
+<img src="./assets/encomgalaxy/19.jpeg" alt="">
+<img src="./assets/encomgalaxy/20.jpeg" alt="">
+<img src="./assets/encomgalaxy/21.jpeg" alt="">
+<img src="./assets/encomgalaxy/22.jpeg" alt="">
+<img src="./assets/encomgalaxy/23.jpeg" alt="">
+<img src="./assets/encomgalaxy/24.jpeg" alt="">
+<img src="./assets/encomgalaxy/25.jpeg" alt="">
+<img src="./assets/encomgalaxy/26.jpeg" alt="">
+<img src="./assets/encomgalaxy/27.jpeg" alt="">
+<img src="./assets/encomgalaxy/28.jpeg" alt="">
+<img src="./assets/encomgalaxy/29.jpeg" alt="">
+<img src="./assets/encomgalaxy/30.jpeg" alt="">
+<img src="./assets/encomgalaxy/31.jpeg" alt="">
+<img src="./assets/encomgalaxy/32.jpeg" alt="">
+
+
+
+''                    </div>
+                </div>
+            </section>
+
+
+
+                    <div class="image-popup-overlay" id="imagePopup" aria-hidden="true">
+                <div class="image-popup-content">
+                    <button class="image-popup-close" type="button" aria-label="Close">&times;</button>
+                    <img src="" alt="">
+                </div>
+            </div>
+                    <footer class="bg-white py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                 <div class="col-auto"><div class="small m-0">Copyright &copy; Lubna Rashid 2025</div></div>
+              
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script>
+            (function () {
+                var overlay = document.getElementById('imagePopup');
+                var overlayImg = overlay ? overlay.querySelector('img') : null;
+                var closeBtn = overlay ? overlay.querySelector('.image-popup-close') : null;
+                var closeTimer;
+
+                if (!overlay || !overlayImg || !closeBtn) return;
+
+                function openPopup(src, alt) {
+                    overlayImg.src = src;
+                    overlayImg.alt = alt || '';
+                    overlay.classList.add('open');
+                    overlay.setAttribute('aria-hidden', 'false');
+                    document.body.style.overflow = 'hidden';
+                }
+
+                function scheduleClose() {
+                    clearTimeout(closeTimer);
+                    closeTimer = setTimeout(closePopup, 120);
+                }
+
+                function cancelClose() { clearTimeout(closeTimer); }
+
+                function closePopup() {
+                    overlay.classList.remove('open');
+                    overlay.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                    overlayImg.src = '';
+                }
+
+                document.querySelectorAll('.gallery-grid img').forEach(function (img) {
+                                        img.addEventListener('mouseleave', scheduleClose);
+                    img.addEventListener('click', function () { openPopup(img.src, img.alt); });
+                });
+
+                overlay.addEventListener('mouseenter', cancelClose);
+                overlay.addEventListener('mouseleave', scheduleClose);
+
+                overlay.addEventListener('click', function (e) {
+                    if (e.target === overlay) closePopup();
+                });
+                closeBtn.addEventListener('click', closePopup);
+
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape') closePopup();
+                });
+            })();
+        </script>
+
+</body>
+</html>

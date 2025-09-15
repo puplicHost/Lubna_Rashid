@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
+    <meta name="description" content="Resume of Lubna Rashid – Marketing Specialist & Social Media Account Manager with 3+ years of experience in digital marketing and content creation." />
+    <meta name="author" content="Lubna Rashid" />
+    <meta name="theme-color" content="#6366f1" />
+    <title>Resume - Lubna Rashid</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Custom Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+      /* Resume page enhancements */
+      .section-title {
+        position: relative;
+        display: inline-block;
+        padding-bottom: .25rem;
+      }
+      .section-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 3px;
+        border-radius: 3px;
+        background: linear-gradient(90deg, rgba(30,48,243,.9), rgba(226,30,128,.9));
+        opacity: .7;
+      }
+      /* Timeline */
+      .timeline {
+        position: relative;
+        padding-left: 1.25rem;
+        border-left: 2px solid rgba(30,48,243, .15);
+        margin-top: 1rem;
+      }
+      .timeline .card {
+        position: relative;
+        margin-bottom: 1.75rem;
+      }
+      .timeline .card::before {
+        content: "";
+        position: absolute;
+        left: -1.3rem;
+        top: 1.25rem;
+        width: 12px;
+        height: 12px;
+        background: #1e30f3;
+        border-radius: 50%;
+        box-shadow: 0 0 0 4px rgba(30,48,243, .15);
+      }
+      @media (max-width: 575.98px) {
+        .timeline { padding-left: .9rem; }
+        .timeline .card::before { left: -1rem; }
+      }
+      /* Certificates grid */
+      .certificate-card {
+        display: block;
+        position: relative;
+        border-radius: .75rem;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0,0,0,.08);
+        transition: transform .2s ease, box-shadow .2s ease;
+      }
+      .certificate-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+      }
+      @media (min-width: 992px) {
+        .certificate-card img { height: 260px; }
+      }
+      .certificate-card__overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        color: #fff;
+        letter-spacing: .4px;
+        background: linear-gradient(180deg, rgba(0,0,0,.0) 20%, rgba(0,0,0,.55) 100%);
+        opacity: 0;
+        transition: opacity .2s ease;
+      }
+      .certificate-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,.12); }
+      .certificate-card:hover .certificate-card__overlay,
+      .certificate-card:focus .certificate-card__overlay { opacity: 1; }
+      /* Mobile readability improvements for resume cards */
+      @media (max-width: 768px) {
+        /* Reduce container gutters to allow wider cards */
+        .container.px-5 { padding-left: .5rem; padding-right: .5rem; }
+
+        /* Widen visible text area by reducing inner padding */
+        .card-body { padding: 1.25rem 1rem !important; }
+
+        .card-body p,
+        .card-body li,
+        .card-body div { font-size: 1.05rem; line-height: 1.75; }
+      }
+    </style>
+  </head>
+  <body class="d-flex flex-column h-100 bg-light">
+    <main class="flex-shrink-0">
+      <!-- Navigation-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+        <div class="container px-5">
+          <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Lubna Rashid</span></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+              <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Page Content-->
+      <div class="container px-5 my-5">
+        <div class="text-center mb-5">
+          <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Resume</span></h1>
+        </div>
+        <div class="row gx-5 justify-content-center">
+          <div class="col-lg-11 col-xl-9 col-xxl-8">
+            <!-- Summary Section -->
+            <section class="mb-5">
+              <div class="card shadow border-0 rounded-4">
+                <div class="card-body p-5">
+                  <div class="d-flex align-items-center justify-content-between mb-3">
+                    <h2 class="text-primary fw-bolder mb-0">Professional Summary</h2>
+                    <a class="btn btn-primary px-4 py-3" href="/assets/Personal Information - مستندات Google.pdf">
+                      <div class="d-inline-block bi bi-download me-2"></div>
+                      Download Resume (PDF)
+                    </a>
+                  </div>
+                  <p class="mb-0">
+                    Marketing Specialist & Social Media Account Manager with 3+ years of experience in creating impactful digital
+                    content, managing client accounts, and leading marketing campaigns across multiple platforms. Skilled in content
+                    strategy, paid advertising, and team coordination to drive measurable growth. Seeking to contribute expertise in
+                    digital marketing and client management to help brands strengthen their online presence and achieve sustainable
+                    business results.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section>
+              <div class="d-flex align-items-center justify-content-between mb-4">
+                <h2 class="text-primary fw-bolder mb-0 section-title">Experience</h2>
+              </div>
+              <div class="timeline">
+              <!-- Experience Card 1 -->
+              <div class="card shadow border-0 rounded-4 mb-5">
+                <div class="card-body p-5">
+                  <div class="row align-items-center gx-5">
+                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                      <div class="bg-light p-4 rounded-4">
+                        <div class="text-primary fw-bolder mb-2">(2022 – Present | 3 years)</div>
+                        <div class="small fw-bolder">Seven Grounds – Marketing & Entrepreneurship Agency (Turkey)</div>
+                        <div class="small text-muted">Content Writer & Social Media Account Manager</div>
+                      </div>
+                    </div>
+                    <div class="col-lg-8">
+                      <ul class="mb-0">
+                        <li>Managed social media accounts across LinkedIn, TikTok, and Meta platforms.</li>
+                        <li>Wrote and localized high-quality content in Arabic, English, and Turkish aligned with brand voice.</li>
+                        <li>Coordinated with designers, developers, and execution teams to deliver campaign ideas end-to-end.</li>
+                        <li>Tracked briefs, performed analysis, and ensured on-time, accurate execution.</li>
+                        <li>Measured campaign performance to increase engagement, improve follower growth, and optimize results.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Experience Card 2 -->
+              <div class="card shadow border-0 rounded-4 mb-5">
+                <div class="card-body p-5">
+                  <div class="row align-items-center gx-5">
+                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                      <div class="bg-light p-4 rounded-4">
+                        <div class="text-primary fw-bolder mb-2">(2013 – 2016 | 3 years)</div>
+                        <div class="small fw-bolder">Software Developer (Jordan & Egypt)</div>
+                        <div class="small text-muted">Programmer</div>
+                      </div>
+                    </div>
+                    <div class="col-lg-8">
+                      <ul class="mb-0">
+                        <li>Developed Android mobile applications.</li>
+                        <li>Designed and implemented software solutions tailored to sector needs.</li>
+                        <li>Built strong technical expertise across digital platforms and electronic systems.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </section>
+
+            <!-- Education Section -->
+            <section>
+              <h2 class="text-secondary fw-bolder mb-4 section-title">Education</h2>
+              <!-- Education Card -->
+              <div class="card shadow border-0 rounded-4 mb-5">
+                <div class="card-body p-5">
+                  <div class="row align-items-center gx-5">
+                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                      <div class="bg-light p-4 rounded-4">
+                        <div class="text-secondary fw-bolder mb-2">Class of 2013</div>
+                        <div class="mb-2">
+                          <div class="small fw-bolder">University of Jordan</div>
+                          <div class="small text-muted">Amman, Jordan</div>
+                        </div>
+                        <div class="fst-italic">
+                          <div class="small text-muted">B.Sc. in Computer Science</div>
+                          <div class="small text-muted">Grade: Very Good</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-8">
+                      <div>
+                        Core foundations in computer science and software engineering, including algorithms, data structures, and
+                        systems development.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Media Gallery Section -->
+            <section>
+              <h2 class="text-secondary fw-bolder mb-4 section-title">Certificates</h2>
+              <div class="card shadow border-0 rounded-4 mb-5">
+                <div class="card-body p-5">
+                  <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+                    <div class="col">
+                      <a class="certificate-card" href="#" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#certificateModal" data-certificate-src="assets/resume/Screenshot from 2025-09-11 03-24-51.png">
+                        <img src="assets/resume/Screenshot from 2025-09-11 03-24-51.png" alt="Screenshot from 2025-09-11 03-24-51" class="img-fluid rounded shadow-sm" />
+                        <span class="certificate-card__overlay">اضغط للعرض</span>
+                      </a>
+                    </div>
+                    <div class="col">
+                      <a class="certificate-card" href="#" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#certificateModal" data-certificate-src="assets/resume/WhatsApp Image 2025-09-10 at 8.57.00 PM.jpeg">
+                        <img src="assets/resume/WhatsApp Image 2025-09-10 at 8.57.00 PM.jpeg" alt="WhatsApp Image 2025-09-10 at 8.57.00 PM" class="img-fluid rounded shadow-sm" />
+                        <span class="certificate-card__overlay">اضغط للعرض</span>
+                      </a>
+                    </div>
+                    <div class="col">
+                      <a class="certificate-card" href="#" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#certificateModal" data-certificate-src="assets/resume/WhatsApp Image 2025-09-10 at 8.57.00 PM(1).jpeg">
+                        <img src="assets/resume/WhatsApp Image 2025-09-10 at 8.57.00 PM(1).jpeg" alt="WhatsApp Image 2025-09-10 at 8.57.00 PM (1)" class="img-fluid rounded shadow-sm" />
+                        <span class="certificate-card__overlay">اضغط للعرض</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Divider -->
+            <div class="pb-5"></div>
+
+            <!-- Skills Section -->
+            <section>
+              <!-- Skillset Card -->
+              <div class="card shadow border-0 rounded-4 mb-5">
+                <div class="card-body p-5">
+                  <!-- Technical & Marketing Skills -->
+                  <div class="mb-5">
+                    <div class="d-flex align-items-center mb-4">
+                      <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
+                        <i class="bi bi-tools"></i>
+                      </div>
+                      <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Technical & Marketing Skills</span></h3>
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-3 mb-4">
+                      <div class="col mb-4 mb-md-0">
+                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Content Writing & Copywriting</div>
+                      </div>
+                      <div class="col mb-4 mb-md-0">
+                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Social Media Management (Meta, TikTok, LinkedIn)</div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Paid Ads & Campaign Coordination</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Soft Skills -->
+                  <div class="mb-5">
+                    <div class="d-flex align-items-center mb-4">
+                      <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
+                        <i class="bi bi-people"></i>
+                      </div>
+                      <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Soft Skills</span></h3>
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-3">
+                      <div class="col mb-4 mb-md-0">
+                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Team Leadership & Collaboration</div>
+                      </div>
+                      <div class="col mb-4 mb-md-0">
+                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Client Communication & Account Management</div>
+                      </div>
+                      <div class="col">
+                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Time Management & Problem Solving</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Languages (Spoken) -->
+                  <div class="mb-0">
+                    <div class="d-flex align-items-center mb-4">
+                      <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
+                        <i class="bi bi-translate"></i>
+                      </div>
+                      <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Languages</span></h3>
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-3 mb-4">
+                      <div class="col mb-4 mb-md-0">
+                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Arabic: Native</div>
+                      </div>
+                      <div class="col mb-4 mb-md-0">
+                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">English: Advanced</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Certificate Modal -->
+    <div class="modal fade" id="certificateModal" tabindex="-1" aria-labelledby="certificateModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+          <div class="modal-body p-0">
+            <img id="certificateModalImg" src="" alt="" class="img-fluid w-100" />
+          </div>
+          <div class="modal-footer justify-content-center">
+            <div id="certificateModalCaption" class="small text-muted"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer-->
+    <footer class="bg-dark py-5 mt-auto">
+      <div class="container px-5">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-auto">
+            <div class="small text-muted">Copyright &copy; Lubna Rashid 2025</div>
+          </div>
+          <div class="col-auto">
+       
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var certLinks = document.querySelectorAll('[data-certificate-src]');
+        var modalImg = document.getElementById('certificateModalImg');
+        var modalCaption = document.getElementById('certificateModalCaption');
+        certLinks.forEach(function (link) {
+          link.addEventListener('click', function (e) {
+            var src = link.getAttribute('data-certificate-src');
+            var img = link.querySelector('img');
+            var title = img ? (img.getAttribute('alt') || '') : '';
+            if (modalImg) {
+              modalImg.src = src || '';
+              modalImg.alt = title || 'Certificate';
+            }
+            if (modalCaption) {
+              modalCaption.textContent = title || '';
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
